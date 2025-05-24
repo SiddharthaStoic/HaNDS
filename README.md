@@ -6,7 +6,7 @@ This implementation targets ECG anomaly detection using the ECG5000 dataset, and
 
 ## Motivation
 
-While most anomaly detection methods rely on statistical deviations or trained models, biological neurons use a more adaptive process called habituation — where repeated exposure to the same stimulus weakens response, and novel input triggers a spike.
+While most anomaly detection methods rely on statistical deviations or trained models, biological neurons use a more adaptive process called habituation, where repeated exposure to the same stimulus weakens response, and novel input triggers a spike.
 
 This project simulates that behavior with a lightweight model in C++, tracks neuron dynamics across sequences, and evaluates novelty using entropy and energy analysis.
 
@@ -20,7 +20,9 @@ Each neuron behaves as follows:
 The stimulus itself is adaptive:  
 Each ECG signal is analyzed to compute a threshold:
 
-    Adaptive Threshold = $\mu$ + 0.5 $\times$ $\sigma$
+$$
+\text{Adaptive Threshold} = \mu + 0.5 \times \sigma
+$$
 
 Stimulus is set to 1 if ECG value exceeds this adaptive threshold.
 
@@ -94,12 +96,12 @@ Each neuron's firing pattern was binarized and entropy was calculated.
 
 This project makes the following key assumptions, based on simplicity, biological plausibility, and empirical tuning:
 
-### 1. Stimulus Threshold: $\mu + 0.5 \times \sigma$
+### 1. Stimulus Threshold:
 
-Instead of using a fixed value (e.g., 0.15), the stimulus threshold is adaptively computed for each sequence using:
+Instead of using a fixed value, the stimulus threshold is adaptively computed for each sequence using:
 
 $$
-\text{adaptive\_threshold} = \mu + 0.5 \times \sigma
+\text{Adaptive Threshold} = \mu + 0.5 \times \sigma
 $$
 
 This captures the signal's statistical context. The factor $0.5$ was chosen to balance sensitivity and robustness:  
@@ -125,9 +127,9 @@ These were chosen to demonstrate how different "neurons" could specialize in dis
 Total neuron energy is estimated as:
 
 $$
-\text{energy} += \left| r_t - r_{t-1} \right| + 
+\text{Energy} += \left| r_t - r_{t-1} \right| + 
 \begin{cases}
-\text{spike\_cost}, & \text{if novelty is triggered} \\\\
+\text{Spike Cost}, & \text{if novelty is triggered} \\\\
 0, & \text{otherwise}
 \end{cases}
 $$
