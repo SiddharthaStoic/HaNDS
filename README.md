@@ -1,4 +1,4 @@
-# HaNDS: A Habituation-Driven Neuromorphic Detection System
+# HaNDS: A Habituation-Driven Neuromorphic Anomaly Detection System
 
 HaNDS is a biologically inspired anomaly detection framework that simulates habituating neurons to detect novel or surprising events in time-series signals.
 
@@ -36,14 +36,23 @@ ECG5000 dataset (from UCR archive):
 
 ## How to Run
 
-### Step 1: Run C++ Simulator
+### Step 1: Run the Model
 
 Make sure you have a C++17 compatible compiler (e.g., g++, clang++).
+
+To compile and run the HaNDS model, you can either:
+
+**Option 1: Use the provided Makefile**
+
+    make
+    ./hands
+
+**Option 2: Compile manually**
 
     g++ main.cpp habituating_neuron.cpp -o hands
     ./hands
 
-This will read ECG signals and write results to:
+This will read the ECG5000 dataset, run all three habituating neurons on each sequence, and save the output to:
 
     results/ecg_multi_neuron_output.csv
 
