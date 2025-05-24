@@ -168,5 +168,5 @@ HaNDS provides diverse novelty profiles which are useful for adaptive detection 
 
 ## Author
 
-Developed by Siddhartha Pundit
-Feel free to fork or contribute.
+- Developed by Siddhartha Pundit
+- Feel free to fork or contribute.
