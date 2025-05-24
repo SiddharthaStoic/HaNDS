@@ -24,7 +24,7 @@ $$
 \text{Adaptive Threshold} = \mu + 0.5 \times \sigma
 $$
 
-Stimulus is set to 1 if ECG value exceeds this adaptive threshold.
+Stimulus is set to $$1$$ if ECG value exceeds this adaptive threshold.
 
 ## Dataset Used
 
