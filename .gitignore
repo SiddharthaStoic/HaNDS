@@ -1,0 +1,25 @@
+# === Compiled binaries ===
+*.o
+*.out
+*.exe
+hands_sim.exe
+
+# === Python cache ===
+__pycache__/
+*.py[cod]
+
+# === VSCode & OS artifacts ===
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# === Result files ===
+results/*.csv
+
+# === Optional logs ===
+*.log
+
+# === Intermediate data (optional) ===
+ECG5000/*.txt
+ECG5000/*.arff
